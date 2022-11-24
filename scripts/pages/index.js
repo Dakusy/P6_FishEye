@@ -3,7 +3,7 @@
 
         const photographerJSON = await fetch ("./data/photographers.json");
         const photographers = await photographerJSON.json();
-        return photographers;
+        return photographers
 
         // et bien retourner le tableau photographers seulement une fois
     }
