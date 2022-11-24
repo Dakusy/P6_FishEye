@@ -1,5 +1,5 @@
 function photographerFactory(data) {
-    const { name ,city, country, tagline, price, portrait, ...media} = data;
+    const { name ,id, city, country, tagline, price, portrait, ...media} = data;
 
     const picture = `./assets/photographers/${portrait}`;
 
@@ -11,7 +11,8 @@ function photographerFactory(data) {
 
         const sectionImageArticleLink = document.createElement( 'a' ); // Création des liens
         sectionImageArticleLink.appendChild(sectionImageArticle);
-        sectionImageArticleLink.setAttribute("href", `#`);
+        sectionImageArticleLink.setAttribute("id", id);
+        sectionImageArticleLink.setAttribute("href", `photographer.html?id=${id}&${name}`);
 
         const footerImageArticle = document.createElement( 'footer' );
 
