@@ -6,7 +6,27 @@
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
 }
+
+.infoPhotographe{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.infoPhotographe p{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.photograph-header img {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
 
 .contact_button {
     font-size: 20px;

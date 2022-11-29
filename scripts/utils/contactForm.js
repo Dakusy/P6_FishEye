@@ -8,13 +8,19 @@ function closeModal() {
     modal.style.display = "none";
 }
 
+/*async function putUserName(data) {
+    const name = document.querySelector(".modal header h1");
+    name.innerHTML = `Contacter-moi</br>
+    ${data.name}`;
+}
+
 async function initName() {
     const id = await getUrlID();
     const data = await getPhotographer(id);
     await putUserName(data);
   }
 
-  initName();
+  initName();*/
 
   // Variables //
 

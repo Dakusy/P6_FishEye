@@ -1,6 +1,7 @@
 function photographerFactory(data) {
     const { name ,id, city, country, tagline, price, portrait, ...media} = data;
 
+
     const picture = `./assets/photographers/${portrait}`;
 
     function getUserCardDOM() { 
@@ -12,7 +13,7 @@ function photographerFactory(data) {
         const sectionImageArticleLink = document.createElement( 'a' ); // Création des liens
         sectionImageArticleLink.appendChild(sectionImageArticle);
         sectionImageArticleLink.setAttribute("id", id);
-        sectionImageArticleLink.setAttribute("href", `photographer.html?id=${id}&${name}`);
+        sectionImageArticleLink.setAttribute("href", `photographer.html?id=${id}`);
 
         const footerImageArticle = document.createElement( 'footer' );
 
@@ -44,5 +45,44 @@ function photographerFactory(data) {
         return (article);
     }
 
+    function getUserPictureDOM(){
+        const pictureUser = document.createElement('img');
+        pictureUser.setAttribute("src", picture);
+        imgUser.setAttribute("alt", "Profil de " + name);
+
+        const imgUser = document.createElement( 'article' );
+        imgUser.appendChild(pictureUser);
+
+        return userPicture;
+    }
+
+    function getUserInfoDOM(){
+        const userInfo = document.createElement('article');
+
+        const userName = document.createElement ('h1');
+        userName.className = "photographerInfo_name";
+        userName.textContent  = name;
+
+        const userCityCountry = document.createElement('p');
+        userCityCountry.className = "photographerInfo_citycountry";
+        userCityCountry.textContent = city + country;
+        
+        const userTagline = document.createElement ('p');
+        userTagline.className = "photographerInfo_tagline";
+        userTagline.textContent = tagline;
+
+        return userInfo;
+
+    }
+
     return {name, city, country, tagline, price, portrait, media, getUserCardDOM}
+}
+
+function mediaFactory(data){
+    const {id, photographerId, title, image, date, price, urlName, media} = data;
+
+    function getUserMediaDOM(){
+        let article
+
+    }
 }

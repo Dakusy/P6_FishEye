@@ -14,6 +14,7 @@
         photographers.forEach((photographer) => {
             const photographerModel = photographerFactory(photographer);
             const userCardDOM = photographerModel.getUserCardDOM();
+            localStorage.setItem(photographerModel.id, JSON.stringify(photographerModel));
             photographersSection.appendChild(userCardDOM);
         });
     };

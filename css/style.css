@@ -46,6 +46,10 @@ h1 {
     margin-bottom: 5px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .photographer_section article img {
     height: 200px;
     width: 200px;
@@ -57,5 +61,26 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.citycountry {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color:#901C1C;
+}
+
+.tagline {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color:#000000;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color:#575757
 }
 

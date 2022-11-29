@@ -9,28 +9,64 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html">
+        <img src="assets/images/logo.png" class="logo" alt = "Page d'Accueil"/>
+      </a>
     </header>
     <main id="main">
       <div class="photograph-header">
+        <div class="infoPhotographe">
+
+        </div>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
     </main>
+
+    <div class="triage">
+      <label for="trieur">Trier par</label>
+      <select onchange="clickTrieur()" name="trie" id="trieur">
+        <option value="popularité">Popularité</option>
+        <option value="date">Date</option>
+        <option value="titre">Titre</option>
+      </select>
+    </div>
+
+
+
     <div id="contact_modal">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
+				<form id="form">
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="prenom">Prénom</label>
+						<input name="prenom" id="prenom"/>
+					</div>
+          <div>
+						<label for="nom">Nom</label>
+						<input name="nom" id="nom"/>
+					</div>
+          <div>
+						<label for="mail">Email</label>
+						<input name="mail" id="mail" />
+					</div>
+          <div>
+						<label for="message">Votre message</label>
+						<input name="message" id="message"/>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
+    <div class="infoComplementaire">
+      <div class="likeGlobal">
+        <p>100</p>
+        <img src="assets/icons/blackHeart.svg" alt="Coeur" >
+      </div>
+      <p class="prix">Loreum</p>
+    </div>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
