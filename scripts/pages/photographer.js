@@ -32,9 +32,12 @@ async function getMedia(id){
 }
 
 function getTotalLike(totalMedia){
+    const photographeLikes = document.querySelector(".infoDetails .likeTotal");
+    let totalLike = 0;
     totalMedia.forEach((unMedia)=>{
-        let totalLike =  unMedia.likes;
+        totalLike = totalLike + unMedia.likes;
     });
+    photographeLikes.textContent = totalLike;
 }
 
 
@@ -93,8 +96,7 @@ async function init(){
     //totalMedia.sort((a b)=> (a.likes b.likes) ? 1 : -1)
     displayData(totalMedia);
 
-
-    //getTotalLike(totalMedia);
+    getTotalLike(totalMedia);
 
 }
 

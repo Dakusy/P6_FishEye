@@ -144,6 +144,11 @@ form input {
     margin-right: 15px;
 }
 
+.infoDetails .likeTotal{
+    display: flex;
+    margin-left: 15px;
+}
+
 
 /* modal errors*/
 
