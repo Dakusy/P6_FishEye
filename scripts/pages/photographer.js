@@ -15,6 +15,29 @@ async function getUserName(id){
 
 }
 
+async function getMedia(id){
+    let tabMedia = [];
+    
+    const mediaJSON = await fetch ("./data/photographers.json");
+    const dataMedia = await mediaJSON.json();
+    media = dataMedia.media;
+    media.forEach(unMedia => {
+        if(unMedia['photographerId'] === id){
+            tabMedia.push(unMedia);
+        }
+    });
+
+    return tabMedia;
+    
+}
+
+function getTotalLike(totalMedia){
+    totalMedia.forEach((unMedia)=>{
+        let totalLike =  unMedia.likes;
+    });
+}
+
+
 function profil(photographe){
     const infoPhotographe = document.querySelector(".infoPhotographe");
     const photographeHeader = document.querySelector(".photograph-header");
@@ -44,6 +67,17 @@ function profil(photographe){
     photographeHeader.appendChild(image);
 }
 
+async function displayData(totalMedia){
+    const listeImage = document.querySelector(".user-pictures");
+    let i = 1;
+    totalMedia.forEach((unMedia) =>{
+        const unMediaModel = mediaFactory(unMedia, i);
+        const unMediaDOM = unMediaModel.getMediaCardDOM();
+        i = i + 1;
+        listeImage.appendChild(unMediaDOM);
+    });
+}
+
 async function init(){
 
     //Recup ID dans passé dans L'URL.
@@ -53,6 +87,15 @@ async function init(){
     const photographe = JSON.parse(localStorage.getItem(id));
     console.log("La liste de photo de", photographe.name, ":");
     profil(photographe);
+
+    totalMedia = await getMedia(id);
+
+    //totalMedia.sort((a b)=> (a.likes b.likes) ? 1 : -1)
+    displayData(totalMedia);
+
+
+    //getTotalLike(totalMedia);
+
 }
 
 init();

@@ -167,3 +167,50 @@ form input {
   .formData[data-error-visible="true"] .text-control {
     border: 2px solid #5a0911;
   }
+
+
+  /* afficher images & vidéos du photographe */
+
+  .listeImage{
+    margin: 0 100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.mediaImage{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    cursor: pointer;
+    max-width: 300px;
+}
+
+.imagePhotographer{
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-bottom: -10px;
+}
+
+.infoImage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infoImage .blockLike{
+    width: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.titleImage{
+    color: #901C1C;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
