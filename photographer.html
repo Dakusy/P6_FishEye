@@ -22,9 +22,9 @@
       </div>
     </main>
 
-    <div class="triage">
-      <label for="trieur">Trier par</label>
-      <select onchange="clickTrieur()" name="trie" id="trieur">
+    <div class="sorter">
+      <label for="sorter">Trier par</label>
+      <select onchange="clickSorter()" name="sort" id="sorter">
         <option value="popularité">Popularité</option>
         <option value="date">Date</option>
         <option value="titre">Titre</option>
@@ -60,12 +60,11 @@
 				</form>
 			</div>
 		</div>
-    <div class="infoComplementaire">
-      <div class="likeGlobal">
-        <p>100</p>
-        <img src="assets/icons/blackHeart.svg" alt="Coeur" >
+    <div class="infoDetails">
+      <div class="likeTotal">
+        <p></p>
       </div>
-      <p class="prix">Loreum</p>
+      <p class="price"></p>
     </div>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>

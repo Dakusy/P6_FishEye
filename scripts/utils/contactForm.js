@@ -1,6 +1,8 @@
+const modal = document.getElementById("contact_modal");
+
 function displayModal() {
-    const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
+    document.getElementById("firstName").focus();
 }
 
 function closeModal() {
@@ -8,19 +10,20 @@ function closeModal() {
     modal.style.display = "none";
 }
 
-/*async function putUserName(data) {
-    const name = document.querySelector(".modal header h1");
+async function putUserName(photographe) {
+    const name = document.querySelector(".modal header h2");
     name.innerHTML = `Contacter-moi</br>
-    ${data.name}`;
+    ${photographe}`;
+    
 }
 
 async function initName() {
     const id = await getUrlID();
-    const data = await getPhotographer(id);
-    await putUserName(data);
+    const photographe = JSON.parse(localStorage.getItem(id));
+    await putUserName(photographe.name);
   }
 
-  initName();*/
+  initName();
 
   // Variables //
 

@@ -1,10 +1,24 @@
 //Mettre le code JavaScript lié à la page photographer.html
 
+async function getUrlID() {
+    let params = (new URL(document.location)).searchParams;
+    let id = parseInt(params.get('id'));
+    return id;
+}
+
+async function getUserName(id){
+    const photographersJSON = await fetch ("./data/photographers.json");
+    const photographersData = await photographersJSON.json();
+    const photographers = photographersData.photographers;
+    const photographer = photographers.filter( photographer => photographer.id === id)[0];
+    return photographer;
+
+}
 
 function profil(photographe){
     const infoPhotographe = document.querySelector(".infoPhotographe");
     const photographeHeader = document.querySelector(".photograph-header");
-    const photographePrice = document.querySelector(".infoComplementaire .prix");
+    const photographePrice = document.querySelector(".infoDetails .price");
 
     const nom = document.createElement('h1');
     const cityCountry = document.createElement('span');

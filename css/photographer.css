@@ -5,9 +5,12 @@
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 100px;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
+    border-radius: 5px;
+    padding: 25px;
 }
 
 .infoPhotographe{
@@ -93,4 +96,50 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+/* CSS pour le trieur popularité etc.. */
+
+.sorter {
+    margin: 30px 100px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    min-width: 300px;
+    width: 20%;
+}
+
+.sorter label {
+    margin-right: 25px;
+    font-weight: bold;
+}
+
+.sorter select {
+    background-color: #901C1C;
+    font-weight: 500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    min-width: 130px;
+}
+
+
+/* Info complémentaires */
+
+.infoDetails {
+    width: 300px;
+    height: 50px;
+    background-color: #DB8876;
+    border-radius: 5px;
+    position: fixed;
+    bottom: -3px;
+    right: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.infoDetails .price{
+    margin-right: 15px;
 }
