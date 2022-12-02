@@ -176,7 +176,7 @@ form input {
 
   /* afficher images & vidéos du photographe */
 
-  .listeImage{
+  .user-pictures{
     margin: 0 100px;
     display: flex;
     flex-flow: row wrap;

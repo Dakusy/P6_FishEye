@@ -77,12 +77,3 @@ function photographerFactory(data) {
 
     return {name, city, country, tagline, price, portrait, media, getUserCardDOM}
 }
-
-function mediaFactory(data){
-    const {id, photographerId, title, image, date, price, urlName, media} = data;
-
-    function getUserMediaDOM(){
-        let article
-
-    }
-}
