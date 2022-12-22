@@ -71,7 +71,7 @@ function profil(photographe){
 }
 
 async function displayData(totalMedia){
-    const listeImage = document.querySelector(".user-pictures");
+    const listeImage = document.querySelector(".user_pictures");
     let i = 1;
     totalMedia.forEach((unMedia) =>{
         const unMediaModel = mediaFactory(unMedia, i);
@@ -80,6 +80,36 @@ async function displayData(totalMedia){
         listeImage.appendChild(unMediaDOM);
     });
 }
+
+function clickSorter(){
+    currentOption = sorter.value;
+    majListeImage();
+}
+
+//sort images/videos depending sorter function
+
+function majListeImage(){
+    const listeImage = document.querySelector(".user_pictures");
+    listeImage.innerHTML = '';
+    console.log(currentOption)
+    switch (currentOption) {
+        case 'popularité':
+            totalMedia.sort((a, b) => (a.likes < b.likes) ? 1 : -1)
+            displayData(totalMedia)
+            break;
+        case 'date':
+            totalMedia.sort((a, b) => (a.date < b.date) ? 1 : -1)
+            displayData(totalMedia)
+            break;
+        case 'titre':
+            totalMedia.sort((a, b) => (a.title > b.title) ? 1 : -1)
+            displayData(totalMedia)
+            break;
+        default:
+            console.log("Erreur trieur vide.");
+      }
+}
+
 
 async function init(){
 
@@ -92,12 +122,18 @@ async function init(){
     profil(photographe);
 
     totalMedia = await getMedia(id);
-
-    //totalMedia.sort((a b)=> (a.likes b.likes) ? 1 : -1)
-    displayData(totalMedia);
-
     getTotalLike(totalMedia);
 
+    totalMedia.sort((a ,b)=> (a.likes < b.likes) ? 1 : -1)
+    displayData(totalMedia);
+
+
+
 }
+
+let currentOption = "Popularité";
+let totalMedia = [];
+const sorter = document.getElementById("sorter");
+
 
 init();

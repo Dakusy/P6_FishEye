@@ -28,6 +28,9 @@ function mediaFactory(data, index) {
         media.setAttribute("src", mediaLink);
         media.className = "imagePhotographer";
 
+        media.setAttribute("onclick", "displayLightbox(this.id)")
+        media.setAttribute("id", id)
+
         titleImage.className = "titleImage";
         blockLike.className = "blockLike";
         likeImage.className = "totalLike";

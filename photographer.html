@@ -13,7 +13,7 @@
         <img src="assets/images/logo.png" class="logo" alt = "Page d'Accueil"/>
       </a>
     </header>
-    <main id="main">
+    <main id="main" aria-roledescription="Information du photographe" aria-hidden="false">
       <div class="photograph-header">
         <div class="infoPhotographe">
 
@@ -22,7 +22,7 @@
       </div>
     </main>
 
-    <div class="sorter">
+    <div class="sorter" aria-hidden="false">
       <label for="sorter">Trier par</label>
       <select onchange="clickSorter()" name="sort" id="sorter">
         <option value="popularité">Popularité</option>
@@ -31,13 +31,13 @@
       </select>
     </div>
 
-    <div class="user-pictures">
+    <div class="user_pictures" id ="user_pictures" aria-hidden="false" role="list">
 
     </div>
 
 
 
-    <div id="contact_modal">
+    <div id="contact_modal" role ="dialog" aria-describedby="modalTitle">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
@@ -64,6 +64,22 @@
 				</form>
 			</div>
 		</div>
+
+    <div id="lightbox-global" role="dialog" aria-label="image closeup view">
+			<div class="lightbox">
+        <img src="assets/icons/closeLightBox.svg" class="fermetureLightbox" alt="Fermeture modal" onclick="closeLightbox()" />
+        <div class="slider">
+          <img src="assets/icons/aiga_left_arrow.svg" alt="image précédente" class="chevron chevron-gauche" onclick="previous()">
+          <img src="" class="mediaLightbox imageLightbox" alt="">
+          <video controls autoplay src="" class="mediaLightbox videoLightbox" alt=""></video>
+          <img src="assets/icons/aiga_right_arrow.svg" alt="image suivante" class="chevron chevron-droit" onclick="next()">
+        </div>
+        <p>
+          titre
+        </p>
+			</div>
+		</div>
+
     <div class="infoDetails">
       <div class="likeTotal">
         <p></p>
@@ -71,6 +87,7 @@
       <p class="price"></p>
     </div>
     <script src="scripts/factories/mediaFactory.js"></script>
+    <script src="scripts/utils/lightbox.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
