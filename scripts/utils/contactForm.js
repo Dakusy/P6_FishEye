@@ -2,18 +2,24 @@ const modal = document.getElementById("contact_modal");
 
 function displayModal() {
 	modal.style.display = "block";
+  main.setAttribute("aria-hidden", "true")
+  user_pictures.setAttribute("aria-hidden", "true")
+  sorter.setAttribute("aria-hidden", "true")
 }
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
+    main.setAttribute("aria-hidden", "false")
+    user_pictures.setAttribute("aria-hidden", "false")
+    sorter.setAttribute("aria-hidden", "false")
 }
 
 /* Affiche le nom du photographe dans le modal.*/
 
 async function putUserName(photographe) {
     const name = document.querySelector(".modal header h2");
-    name.innerHTML = `Contacter-moi</br>
+    name.innerHTML = `Contactez-moi</br>
     ${photographe.name}`;
     
 }
@@ -34,6 +40,7 @@ async function initName() {
   const lastName = document.getElementById("nom");
   const email = document.getElementById("mail");
   const message = document.getElementById("message");
+  const modalSubmit = document.getElementById("submit_form");
 
 
 //Vérification prénom/nom fonction
@@ -75,4 +82,31 @@ const checkEmail=(email) =>{
   email.addEventListener('blur', function () {
     checkEmail(email);
   });
+
+  function validateModalSubmit() {
+    // check of each function input of the form
+    if (checkName(firstName) && checkName(lastName) && checkEmail(email)) {
+      // display none the modal
+      modal.style.display = "none";
+      console.log(firstName.value);
+      console.log(lastName.value);
+      console.log(email.value);
+      console.log(message.value);
+      return false;
+    } else {
+      // else show all errorVisible of each else functions
+      checkName(firstName);
+      checkName(lastName);
+      checkEmail(email);
+      return false;
+    }
+  };
+
+modalSubmit.addEventListener('click' , function (e){
+  e.preventDefault();
+  validateModalSubmit();
+});
+
+
+
 

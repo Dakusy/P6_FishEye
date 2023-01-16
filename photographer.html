@@ -1,100 +1,112 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <a href="index.html">
-        <img src="assets/images/logo.png" class="logo" alt = "Page d'Accueil"/>
-      </a>
-    </header>
-    <main id="main" aria-roledescription="Information du photographe" aria-hidden="false">
-      <div class="photograph-header">
-        <div class="infoPhotographe">
 
-        </div>
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+<head>
+  <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <script src="https://kit.fontawesome.com/d0ee6e80bb.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <title>Fisheye - photographe </title>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img src="assets/images/logo.png" class="logo" alt="Page d'Accueil" aria-label="Page d'Accueil" />
+    </a>
+  </header>
+  <main id="main" aria-roledescription="Information du photographe" aria-hidden="false">
+    <div class="photograph-header">
+      <div class="infoPhotographe">
+
       </div>
-    </main>
-
-    <div class="sorter" aria-hidden="false">
-      <label for="sorter">Trier par</label>
-      <select onchange="clickSorter()" name="sort" id="sorter">
-        <option value="popularité">Popularité</option>
-        <option value="date">Date</option>
-        <option value="titre">Titre</option>
-      </select>
+      <button class="contact_button" aria-labelledby="contact-me" onclick="displayModal()">Contactez-moi</button>
     </div>
 
-    <div class="user_pictures" id ="user_pictures" aria-hidden="false" role="list">
-
-    </div>
-
-
-
-    <div id="contact_modal" role ="dialog" aria-describedby="modalTitle">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form id="form">
-					<div class="formData">
-						<label for="prenom">Prénom</label>
-						<input class="text-control" name="prenom" id="prenom"/>
-					</div>
-          <div class="formData">
-						<label for="nom">Nom</label>
-						<input class="text-control" name="nom" id="nom"/>
-					</div>
-          <div class="formData">
-						<label for="mail">Email</label>
-						<input class="text-control" name="mail" id="mail" />
-					</div>
-          <div class="formData">
-						<label for="message">Votre message</label>
-						<input class="text-control" name="message" id="message"/>
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-
-    <div id="lightbox-global" role="dialog" aria-label="image closeup view">
-			<div class="lightbox">
-        <img src="assets/icons/closeLightBox.svg" class="fermetureLightbox" alt="Fermeture modal" onclick="closeLightbox()" />
-        <div class="slider">
-          <img src="assets/icons/aiga_left_arrow.svg" alt="image précédente" class="chevron chevron-gauche" onclick="previous()">
-          <img src="" class="mediaLightbox imageLightbox" alt="">
-          <video controls autoplay src="" class="mediaLightbox videoLightbox" alt=""></video>
-          <img src="assets/icons/aiga_right_arrow.svg" alt="image suivante" class="chevron chevron-droit" onclick="next()">
-        </div>
-        <p>
-          titre
-        </p>
-			</div>
-		</div>
-
-    <div class="infoDetails">
+    <div class="infoDetails" aria-hidden="false">
       <div class="likeTotal">
         <p></p>
       </div>
       <div class="heart">
-      <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-heart"></i>
       </div>
       <p class="price"></p>
     </div>
-    <script src="scripts/factories/mediaFactory.js"></script>
-    <script src="scripts/utils/lightbox.js"></script>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
-  </body>
+
+  </main>
+
+  <div class="sorter" aria-hidden="false">
+    <label for="sorter">Trier par</label>
+    <select onchange="clickSorter()" name="sort" id="sorter">
+      <option value="popularité">Popularité</option>
+      <option value="date">Date</option>
+      <option value="titre">Titre</option>
+    </select>
+  </div>
+
+  <div class="user_pictures" id="user_pictures" aria-hidden="false" role="list">
+
+  </div>
+
+
+
+  <div id="contact_modal" role="dialog" aria-describedby="modalTitle">
+    <div class="modal">
+      <header>
+        <h2>Contactez-moi</h2>
+        <img src="assets/icons/close.svg" onclick="closeModal()" />
+      </header>
+      <form id="form">
+        <div class="formData">
+          <label for="prenom">Prénom</label>
+          <input class="text-control" name="prenom" id="prenom" />
+        </div>
+        <div class="formData">
+          <label for="nom">Nom</label>
+          <input class="text-control" name="nom" id="nom" />
+        </div>
+        <div class="formData">
+          <label for="mail">Email</label>
+          <input class="text-control" name="mail" id="mail" />
+        </div>
+        <div class="formData">
+          <label for="message">Votre message</label>
+          <textarea class="text-control" name="message" id="message" cols="80" rows="10"></textarea>
+        </div>
+        <input class="contact_button" id="submit_form" type="submit" value="envoyer" />
+      </form>
+    </div>
+  </div>
+
+  <div id="lightbox-global" role="dialog" aria-label="image closeup view">
+    <div class="lightbox">
+      <div class="slider">
+        <div class="left-chevron" onclick="previous()">
+          <i class="fa-sharp fa-solid fa-chevron-left"></i>
+        </div>
+
+        <div class="right-chevron" onclick="next()">
+          <i class="fa-sharp fa-solid fa-chevron-right"></i>
+        </div>
+
+        <div class="close-lightbox" onclick="closeLightbox()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <img src="" class="mediaLightbox imageLightbox" alt="">
+        <video controls autoplay src="" class="mediaLightbox videoLightbox" alt=""></video>
+      </div>
+      <p>
+        titre
+      </p>
+    </div>
+  </div>
+
+  <script src="scripts/factories/mediaFactory.js"></script>
+  <script src="scripts/utils/lightbox.js"></script>
+  <script src="/scripts/pages/photographer.js"></script>
+  <script src="/scripts/utils/contactForm.js"></script>
+</body>
+
 </html>

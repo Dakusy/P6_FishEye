@@ -1,6 +1,7 @@
 const lightbox = document.getElementById("lightbox-global");
 const video = document.querySelector(".slider .videoLightbox");
 const image = document.querySelector(".slider .imageLightbox");
+const infoDetails = document.querySelector(".infoDetails");
 let currentPosition;
 let titreImage = document.querySelector(".lightbox p");
 let lightboxIsOpen = false;
@@ -29,6 +30,7 @@ function displayLightbox(mediaId) {
     main.setAttribute("aria-hidden", "true")
     user_pictures.setAttribute("aria-hidden", "true")
     sorter.setAttribute("aria-hidden", "true")
+    infoDetails.setAttribute("aria-hidden", "true")
     lightbox.setAttribute("aria-hidden", "false")
 	lightbox.style.display = "flex";
     lightboxIsOpen = true;
@@ -40,6 +42,7 @@ function closeLightbox() {
     main.setAttribute("aria-hidden", "false")
     user_pictures.setAttribute("aria-hidden", "false")
     sorter.setAttribute("aria-hidden", "false")
+    infoDetails.setAttribute("aria-hidden", "false")
     lightbox.style.display = "none";
     lightbox.setAttribute("aria-hidden", "true")
     lightboxIsOpen = false;
