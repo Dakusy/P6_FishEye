@@ -1,3 +1,53 @@
+body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+}
+
+/* header info*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+h1 {
+    color: #D3573C;
+    font-weight: 400;
+    font-size: 64px;
+    margin-bottom:auto;
+    line-height: 83px;
+}
+
+.logo {
+    height: 50px;
+    margin-left: 100px;
+}
+
+.citycountry {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color:#901C1C;
+    margin-top:-20px;
+    margin-bottom:auto;
+
+}
+
+.tagline {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 23px;
+    color:#525252;
+}
+
+
 #contact_modal, #lightbox-global {
     display: none;
     width: 100vw;
@@ -145,12 +195,26 @@ form input {
 
 
 .infoDetails .price{
-    margin-right: 15px;
+    color: #000000;
+    font-size: 20px;
+    line-height: 10px;
+    margin-right:10px;
+    font-weight:500;
+}
+
+.heart {
+    margin-right: 100px;
+    margin-top : 15px;
+
 }
 
 .infoDetails .likeTotal{
     display: flex;
     margin-left: 15px;
+    color: #000000;
+    font-size: 24px;
+    line-height: 50px;
+    font-weight: 500;
 }
 
 
