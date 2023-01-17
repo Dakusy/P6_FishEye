@@ -287,11 +287,14 @@ form input {
     width: 50px;
     display: flex;
     justify-content: space-around;
+    color:#911C1C;
+    font-weight: 500;
 }
 
 .titleImage{
-    color: #901C1C;
-    font-size: 20px;
+    color: #911C1C;
+    font-size: 24px;
+    font-weight: 400;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
