@@ -219,6 +219,11 @@ form input {
 
 }
 
+#id_heart {
+    margin-top:18px;
+    margin-left:2px;
+}
+
 .infoDetails .likeTotal {
     display: flex;
     margin-left: 15px;
