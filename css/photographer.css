@@ -3,7 +3,7 @@ body {
     margin: 0;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -20,7 +20,7 @@ h1 {
     color: #D3573C;
     font-weight: 400;
     font-size: 64px;
-    margin-bottom:auto;
+    margin-bottom: auto;
     line-height: 83px;
 }
 
@@ -35,9 +35,9 @@ h1 {
     font-weight: 400;
     font-size: 24px;
     line-height: 31px;
-    color:#901C1C;
-    margin-top:-20px;
-    margin-bottom:auto;
+    color: #901C1C;
+    margin-top: -20px;
+    margin-bottom: auto;
 
 }
 
@@ -48,11 +48,12 @@ h1 {
     margin-top: 10px;
     font-size: 18px;
     line-height: 23px;
-    color:#525252;
+    color: #525252;
 }
 
 
-#contact_modal, #lightbox-global {
+#contact_modal,
+#lightbox-global {
     display: none;
     width: 100vw;
     height: 100%;
@@ -60,6 +61,7 @@ h1 {
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
@@ -71,12 +73,12 @@ h1 {
     padding: 25px;
 }
 
-.infoPhotographe{
+.infoPhotographe {
     display: flex;
     flex-flow: column nowrap;
 }
 
-.infoPhotographe p{
+.infoPhotographe p {
     display: flex;
     flex-flow: column nowrap;
 }
@@ -203,21 +205,21 @@ form input {
 }
 
 
-.infoDetails .price{
+.infoDetails .price {
     color: #000000;
     font-size: 20px;
     line-height: 10px;
-    margin-right:10px;
-    font-weight:500;
+    margin-right: 10px;
+    font-weight: 500;
 }
 
 .heart {
     margin-right: 100px;
-    margin-top : 15px;
+    margin-top: 15px;
 
 }
 
-.infoDetails .likeTotal{
+.infoDetails .likeTotal {
     display: flex;
     margin-left: 15px;
     color: #000000;
@@ -241,19 +243,20 @@ form input {
     line-height: 0.3;
     opacity: 0;
     transition: 0.3s;
-  }
-  .formData[data-error-visible="true"]::after {
+}
+
+.formData[data-error-visible="true"]::after {
     opacity: 1;
-  }
+}
 
-  .formData[data-error-visible="true"] .text-control {
+.formData[data-error-visible="true"] .text-control {
     border: 2px solid #5a0911;
-  }
+}
 
 
-  /* afficher images & vidéos du photographe */
+/* afficher images & vidéos du photographe */
 
-  .user_pictures{
+.user_pictures {
     margin: 0 100px;
     display: flex;
     flex-flow: row wrap;
@@ -261,7 +264,7 @@ form input {
     margin-bottom: 50px;
 }
 
-.mediaImage{
+.mediaImage {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -269,7 +272,7 @@ form input {
     max-width: 300px;
 }
 
-.imagePhotographer{
+.imagePhotographer {
     height: 300px;
     width: 300px;
     border-radius: 5px;
@@ -277,21 +280,21 @@ form input {
     margin-bottom: -10px;
 }
 
-.infoImage{
+.infoImage {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.infoImage .blockLike{
+.infoImage .blockLike {
     width: 50px;
     display: flex;
     justify-content: space-around;
-    color:#911C1C;
+    color: #911C1C;
     font-weight: 500;
 }
 
-.titleImage{
+.titleImage {
     color: #911C1C;
     font-size: 24px;
     font-weight: 400;
@@ -311,7 +314,7 @@ form input {
     align-items: center;
 }
 
-.lightbox{
+.lightbox {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -319,18 +322,18 @@ form input {
     font-size: 24px;
 }
 
-.lightbox p{
-    align-self:flex-start;
+.lightbox p {
+    align-self: flex-start;
     margin-left: 12%;
 }
 
-.slider{
+.slider {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-.lightbox .close-lightbox{
+.lightbox .close-lightbox {
     position: absolute;
     right: 19%;
     top: 5%;
@@ -348,7 +351,8 @@ form input {
 
 
 
-.slider .imageLightbox, .slider .videoLightbox{
+.slider .imageLightbox,
+.slider .videoLightbox {
     justify-content: space-around;
     height: 800px;
     width: 800px;
@@ -356,6 +360,6 @@ form input {
     object-fit: cover;
 }
 
-svg{
+svg {
     color: #911C1C;
 }
