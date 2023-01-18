@@ -82,20 +82,11 @@
   <div id="lightbox-global" role="dialog" aria-label="image closeup view">
     <div class="lightbox">
       <div class="slider">
-        <div class="left-chevron" onclick="previous()">
-          <i class="fa-sharp fa-solid fa-chevron-left"></i>
-        </div>
-
-        <div class="right-chevron" onclick="next()">
-          <i class="fa-sharp fa-solid fa-chevron-right"></i>
-        </div>
-
-        <div class="close-lightbox" onclick="closeLightbox()">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
-
+          <i class=" chevron fa-sharp fa-solid fa-chevron-left" onclick="previous()"></i>
+          <i class="close-lightbox fa-solid fa-xmark" onclick="closeLightbox()"></i>
         <img src="" class="mediaLightbox imageLightbox" alt="">
         <video controls autoplay src="" class="mediaLightbox videoLightbox" alt=""></video>
+        <i class=" chevron fa-sharp fa-solid fa-chevron-right" onclick="next()"></i>
       </div>
       <p>
         titre
@@ -106,7 +97,6 @@
   <script src="scripts/factories/mediaFactory.js"></script>
   <script src="scripts/utils/lightbox.js"></script>
   <script src="/scripts/pages/photographer.js"></script>
-  <script src ="scripts/utils/likes.js"></script>
   <script src="/scripts/utils/contactForm.js"></script>
 </body>
 
