@@ -5,6 +5,8 @@ function displayModal() {
   main.setAttribute("aria-hidden", "true")
   user_pictures.setAttribute("aria-hidden", "true")
   sorter.setAttribute("aria-hidden", "true")
+  modal.setAttribute("aria-hidden", "false")
+  document.getElementById("prenom").focus();
 }
 
 function closeModal() {
@@ -107,6 +109,11 @@ modalSubmit.addEventListener('click', function (e) {
   validateModalSubmit();
 });
 
+document.addEventListener('keydown', function(event){
+	if(event.key === "Escape" && modal.getAttribute('aria-hidden') === 'false'){
+		closeModal()
+	}
+});
 
 
 

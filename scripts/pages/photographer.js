@@ -53,7 +53,7 @@ function profil(photographe) {
     tagline.textContent = photographe.tagline;
     photographePrice.textContent = photographe.price + "€ / jour";
 
-    image.setAttribute("src", photographe.picture);
+    image.setAttribute("src", `./assets/photographers/${photographe.portrait}`);
     image.setAttribute("alt", photographe.name);
     cityCountry.className = "citycountry";
     tagline.className = "tagline";
@@ -115,9 +115,7 @@ async function init() {
     //Recup ID dans passé dans L'URL.
     let params = (new URL(document.location)).searchParams;
     let id = parseInt(params.get('id'));
-
     const photographe = JSON.parse(localStorage.getItem(id));
-    console.log("La liste de photo de", photographe.name, ":");
     profil(photographe);
 
     totalMedia = await getMedia(id);

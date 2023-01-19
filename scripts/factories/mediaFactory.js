@@ -46,11 +46,20 @@ function mediaFactory(data, index) {
 
 
         divImage.className = "mediaImage";
+        divImage.setAttribute("role", "listitem");
+        divImage.setAttribute("tabindex", index);
         media.setAttribute("src", mediaLink);
         media.className = "imagePhotographer";
 
-        media.setAttribute("onclick", "displayLightbox(this.id)")
-        media.setAttribute("id", id)
+        divImage.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+              displayLightbox(media.id)
+            }
+        });
+
+        media.setAttribute("onclick", "displayLightbox(this.id)");
+        media.setAttribute("id", id);
+        media.setAttribute("alt", "");
 
         titleImage.className = "titleImage";
         blockLike.className = "blockLike";
@@ -58,6 +67,7 @@ function mediaFactory(data, index) {
         infoImage.className = "infoImage";
         heart.className = "fa-regular fa-heart";
         heart.setAttribute("id", "id_heart");
+        heart.setAttribute("alt","likes");
         likeImage.textContent = likes;
         divImage.appendChild(media);
         infoImage.appendChild(titleImage);
